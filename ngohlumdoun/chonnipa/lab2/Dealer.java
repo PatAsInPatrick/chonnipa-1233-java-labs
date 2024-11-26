@@ -1,3 +1,5 @@
+package ngohlumdoun.chonnipa.lab2;
+
 /**
  * The Dealer Program:
  * This program accepts three arguments then processes
@@ -11,8 +13,6 @@
  * ID : 673040123-3
  * Sec : 2
  */
-
-package ngohlumdoun.chonnipa.lab2;
 
 public class Dealer {
     public static void main(String[] args) {
