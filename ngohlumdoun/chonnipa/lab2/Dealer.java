@@ -16,12 +16,19 @@ package ngohlumdoun.chonnipa.lab2;
 
 public class Dealer {
     public static void main(String[] args) {
+
+        // Check if the number of arguments is three
+        if (args.length != 3) {
+            System.err.println("Invalid number of arguments. Please provide exactly three arguments.");
+            System.exit(-1);
+        }
+
+        // Get the dealer's name, number of clients, and gender from the command line arguments
         String dealer_name = args[0];
         int num_clients = Integer.parseInt(args[1]);
         String dealer_gender = args[2];
         
-        System.err.println("Invalid number of arguments. Please provide exactly three arguments.");
-
+        // Display the dealer's information
         System.out.println("Dealer's name : " + dealer_name);
         System.out.println("Number of clients : " + num_clients);
         System.out.println("Gender : " + dealer_gender);
