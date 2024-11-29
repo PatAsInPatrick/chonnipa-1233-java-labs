@@ -4,7 +4,7 @@ package ngohlumdoun.chonnipa.lab2;
  * Primitive Data Type Program:
  * This program converts
  * 
- * The output shoukd be
+ * The output should be
  * 
  * Student ID : 673040123-3
  * First Name : Chonnipa
@@ -21,7 +21,7 @@ package ngohlumdoun.chonnipa.lab2;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 28 Nov 2024 6:50 PM
+ * Last Updated : 29 Nov 2024 9:57 AM
  */
 
 public class PrimitiveDataType {

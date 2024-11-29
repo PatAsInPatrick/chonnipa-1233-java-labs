@@ -4,7 +4,9 @@ package ngohlumdoun.chonnipa.lab2;
  * The Dealer Program:
  * This program accepts three arguments then processes
  * and displays dealer information.
- * The output shoukd be
+ * 
+ * The output should be
+ * 
  * Dealer's name : <dealer_name>.
  * Numbre of clients : <num_clients>
  * Gender : <dealer_gender>
@@ -12,6 +14,8 @@ package ngohlumdoun.chonnipa.lab2;
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
  * Sec : 2
+ * 
+ * Last Updated : 29 Nov 2024 9:57 AM
  */
 
 public class Dealer {
