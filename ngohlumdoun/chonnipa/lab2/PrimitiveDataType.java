@@ -34,6 +34,7 @@ public class PrimitiveDataType {
         // Clean Student ID to remove spaces and dashes
         String cleanStudentNumber = studentNumber.replace(" ", "").replace("-", "");
 
+        
         // Primitive Data Type Variables
         byte myByte = (byte) firstName.length();
         short myShort = (short) (myByte * 21);
