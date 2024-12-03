@@ -8,25 +8,22 @@ import java.util.Set;
  * This program simulates a simple Rock-Paper-Scissors game between two players.
  * The program should accept two arguments, each representing the choice of a
  * player.
- * 
+ * ------------------------------------
  * The output should be
  * 
  * Player 1 chooses: <player1_choice>
  * Player 2 chooses: <player2_choice>
  * Player 1 wins! / Player 2 wins! / It's a tie!
- * 
+ * ------------------------------------
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 30 Nov 2024 12:19 AM
+ * Last Updated : 3 Dec 2024 10:06 PM
  */
 
 public class RockPaperScissors {
     public static void main(String[] args) {
-
-        String player1_choice;
-        String player2_choice;
 
         // Create a set of valid choices to validate the player's choices
         Set<String> validChoices = new HashSet<>();
@@ -36,14 +33,13 @@ public class RockPaperScissors {
 
         // Check if the number of arguments is two
         if (args.length != 2) {
-            System.err.println("Invalid number of arguments. Please provide exactly three arguments.");
+            System.err.println("Invalid number of arguments. Please provide exactly two arguments.");
             System.exit(-1);
         }
 
-        // Get the player's choices from the command line arguments and convert them to
-        // lower case
-        player1_choice = args[0].toLowerCase();
-        player2_choice = args[1].toLowerCase();
+        // Get the player's choices and convert them to lower case
+        String player1_choice = args[0].toLowerCase();
+        String player2_choice = args[1].toLowerCase();
 
         // Check if the arguments are valid
         if (validChoices.contains(player1_choice) && validChoices.contains(player2_choice)) {
@@ -65,7 +61,5 @@ public class RockPaperScissors {
             System.err.println("Invalid choice(s). Valid choices are 'rock', 'paper', or 'scissor'");
             System.exit(-1);
         }
-        System.err.println("Invalid choice(s). Valid choices are 'rock', 'paper', or 'scissor'");
-        System.exit(-1);
     }
 }

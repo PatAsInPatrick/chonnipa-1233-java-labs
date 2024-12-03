@@ -3,7 +3,7 @@ package ngohlumdoun.chonnipa.lab2;
 /**
  * Primitive Data Type Program:
  * This program converts
- * 
+ * ------------------------------------
  * The output should be
  * 
  * Student ID : 673040123-3
@@ -16,12 +16,12 @@ package ngohlumdoun.chonnipa.lab2;
  * Double Value : <value of 0.yyyy, where yyyy are the last four digits of your student ID>
  * Char Value : <first letter of your first name>
  * Boolean Value : <true if the last digit of your student ID is odd, and false if it is even>
- * 
+ * ------------------------------------
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 29 Nov 2024 9:57 AM
+ * Last Updated : 3 Dec 2024 10:06 PM
  */
 
 public class PrimitiveDataType {
