@@ -51,7 +51,6 @@ public class NumberGuessingGames {
             maxTries = input.nextInt();
         }
 
-        //
         boolean playAgain = false;
         do {
             // Display the welcome message
