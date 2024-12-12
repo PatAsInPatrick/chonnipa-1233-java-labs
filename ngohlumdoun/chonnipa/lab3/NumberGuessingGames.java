@@ -119,5 +119,6 @@ public class NumberGuessingGames {
             }
 
         } while (playAgain);
+        input.close();
     }
 }
