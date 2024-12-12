@@ -9,7 +9,7 @@ package ngohlumdoun.chonnipa.lab3;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 07:15 PM
+ * Last Updated : 13 Dec 2024 01:07 AM
  */
 
 import java.util.Scanner;
@@ -55,7 +55,7 @@ public class ConfigurableNumberGuessingGame {
 
         // Accept user inputs and compare with the target number
         // until the user guesses correctly or runs out of attempts
-        int count = 1;
+        int count = 0;
         for (int i = 0; i < maxTries; i++) {
 
             // Get the user input number
@@ -72,6 +72,8 @@ public class ConfigurableNumberGuessingGame {
 
             // Check if the user input is the target number
             if (userInput == answer) {
+                // Increment the count of attempts made by the user
+                count++;
                 System.out.println("Congratulations!");
                 System.out.print("You have tried " + count + " time");
 

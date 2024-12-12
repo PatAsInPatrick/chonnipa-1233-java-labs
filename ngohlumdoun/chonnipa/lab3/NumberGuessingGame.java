@@ -30,7 +30,7 @@ public class NumberGuessingGame {
 
         // Accept user inputs and compare with the target number
         // until the user guesses correctly or runs out of attempts
-        int count = 1;
+        int count = 0;
         for (int i = 0; i < 5; i++) {
 
             // Get the user input number
@@ -39,6 +39,8 @@ public class NumberGuessingGame {
 
             // Check if the user input is the target number
             if (userInput == answer) {
+                // Increment the count of attempts made by the user
+                count++;
                 System.out.println("Congratulations!");
                 System.out.print("You have tried " + count + " time");
 

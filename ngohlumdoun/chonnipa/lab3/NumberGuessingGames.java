@@ -10,7 +10,7 @@ package ngohlumdoun.chonnipa.lab3;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 07:15 PM
+ * Last Updated : 12 Dec 2024 02:28 PM
  */
 
 import java.util.Scanner;
@@ -51,13 +51,16 @@ public class NumberGuessingGames {
             maxTries = input.nextInt();
         }
 
+        //
+        boolean playAgain = false;
         do {
             // Display the welcome message
             System.out.println("Welcome to a number guessing game!");
 
             // Accept user inputs and compare with the target number
             // until the user guesses correctly or runs out of attempts
-            int count = 1;
+            int count = 0;
+            boolean answerCorrectly = false;
             for (int i = 0; i < maxTries; i++) {
 
                 // Get the user input number
@@ -72,8 +75,10 @@ public class NumberGuessingGames {
                     userInput = input.nextInt();
                 }
 
-                // Check if the user input is the target number
+                // Check if the user input is the target number_
                 if (userInput == answer) {
+                    // Increment the count of attempts made by the user
+                    count++;
                     System.out.println("Congratulations!");
                     System.out.print("You have tried " + count + " time");
 
@@ -81,17 +86,8 @@ public class NumberGuessingGames {
                     if (count > 1)
                         System.out.print("s");
 
-                    // Ask the user if they want to play again
-                    System.out.print("\nWant to play again (Y or y):");
-                    String userAnswer = input.next();
-
-                    // If the user chooses to play again, start a new game
-                    if (userAnswer.equals("Y") || userAnswer.equals("y")) {
-                        continue;
-                    } else {
-                        System.out.println("Thank you for playing our games. Bye!");
-                        System.exit(0);
-                    }
+                    answerCorrectly = true;
+                    break;
 
                 } else if (userInput > answer) {
                     System.out.println("Try a lower number!");
@@ -104,22 +100,24 @@ public class NumberGuessingGames {
                 }
             }
 
-            // Display the number of attempts made by the user
-            System.out.println("You have tried " + count + " times. You ran out of guesses");
-            System.out.println("The answer is " + answer);
+            if (!answerCorrectly) {
+                // Display the number of attempts made by the user
+                System.out.println("You have tried " + count + " times. You ran out of guesses");
+                System.out.print("The answer is " + answer);
+            }
 
             // Ask the user if they want to play again
-            System.out.print("Want to play again (Y or y):");
+            System.out.print("\nWant to play again (Y or y):");
             String userAnswer = input.next();
 
             // If the user chooses to play again, start a new game
             if (userAnswer.equals("Y") || userAnswer.equals("y")) {
-                continue;
+                playAgain = true;
             } else {
                 System.out.println("Thank you for playing our games. Bye!");
                 System.exit(0);
             }
 
-        } while (true);
+        } while (playAgain);
     }
 }
