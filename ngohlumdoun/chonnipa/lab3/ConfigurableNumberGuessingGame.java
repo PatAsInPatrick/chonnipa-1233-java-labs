@@ -9,7 +9,7 @@ package ngohlumdoun.chonnipa.lab3;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 6 Dec 2024 11:31 AM
+ * Last Updated : 12 Dec 2024 07:15 PM
  */
 
 import java.util.Scanner;
@@ -57,10 +57,18 @@ public class ConfigurableNumberGuessingGame {
         // until the user guesses correctly or runs out of attempts
         int count = 1;
         for (int i = 0; i < maxTries; i++) {
-            System.out.print("Enter an integer between " + min + " and " + max + ":");
 
             // Get the user input number
+            System.out.print("Enter an integer between " + min + " and " + max + ":");
             int userInput = input.nextInt();
+
+            // Validate the user input between the min and max values
+            while (min > userInput || max < userInput) {
+                System.out.println("The number must be between " + min + " and " + max);
+
+                System.out.print("Enter an integer between " + min + " and " + max + ":");
+                userInput = input.nextInt();
+            }
 
             // Check if the user input is the target number
             if (userInput == answer) {
@@ -74,12 +82,13 @@ public class ConfigurableNumberGuessingGame {
                 System.exit(-1);
             } else if (userInput > answer) {
                 System.out.println("Try a lower number!");
+                // Increment the count of attempts made by the user
+                count++;
             } else {
                 System.out.println("Try a higher number!");
+                // Increment the count of attempts made by the user
+                count++;
             }
-
-            // Increment the count of attempts made by the user
-            count++;
         }
         input.close();
 
