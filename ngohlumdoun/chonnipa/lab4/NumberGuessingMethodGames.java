@@ -14,7 +14,7 @@ import java.util.Scanner;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 02:28 PM
+ * Last Updated : 12 Dec 2024 03:39 AM
  */
 
 public class NumberGuessingMethodGames {

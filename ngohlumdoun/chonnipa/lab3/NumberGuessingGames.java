@@ -10,7 +10,7 @@ package ngohlumdoun.chonnipa.lab3;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 02:28 PM
+ * Last Updated : 12 Dec 2024 02:28 AM
  */
 
 import java.util.Scanner;
