@@ -14,7 +14,7 @@ import java.util.Scanner;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 09:20 AM
+ * Last Updated : 12 Dec 2024 10:41 AM
  */
 
 public class NumberGuessingMethodGames {
@@ -68,12 +68,16 @@ public class NumberGuessingMethodGames {
 
     static void playGame() {
         genAnswer();
+        answerCorrectly = false;
 
         count = 0;
         // Display the welcome message
         System.out.println("Welcome to a number guessing game!");
 
         for (int i = 0; i < maxTries; i++) {
+
+            if (answerCorrectly) break;
+
             // Get the user input number
             System.out.print("Enter an integer between " + min + " and " + max + ":");
             userInput = input.nextInt();
@@ -92,7 +96,13 @@ public class NumberGuessingMethodGames {
 
         if (!answerCorrectly) {
             // Display the number of attempts made by the user
-            System.out.println("You have tried " + count + " times. You ran out of guesses");
+            System.out.print("You have tried " + count + " time");
+
+            // If user made more than one attempt, add "s" after "time" to make it plural.
+            if (count > 1)
+                System.out.print("s");
+
+            System.out.println(". You ran out of guesses");
             System.out.print("The answer is " + answer);
         }
 
@@ -114,7 +124,7 @@ public class NumberGuessingMethodGames {
     }
 
     static void checkAnswer(int guesse) {
-        
+
         if (guesse == answer) {
             // Increment the count of attempts made by the user
             count++;
@@ -123,7 +133,7 @@ public class NumberGuessingMethodGames {
 
             // If user made more than one attempt, add "s" after "time" to make it plural.
             if (count > 1)
-                System.out.println("s");
+                System.out.print("s");
 
             answerCorrectly = true;
 
