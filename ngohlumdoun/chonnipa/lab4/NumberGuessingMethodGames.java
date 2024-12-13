@@ -29,7 +29,7 @@ public class NumberGuessingMethodGames {
 
     public static void main(String[] args) {
         configure();
-        playGame();
+        playGames();
     }
 
     static void configure() {
@@ -66,7 +66,7 @@ public class NumberGuessingMethodGames {
         answer = min + (int) (Math.random() * ((max - min) + 1));
     }
 
-    static void playGame() {
+    static void playGames() {
         genAnswer();
         answerCorrectly = false;
 
@@ -112,15 +112,15 @@ public class NumberGuessingMethodGames {
 
         // If the user chooses to play again, start a new game
         if (userAnswer.equals("Y") || userAnswer.equals("y")) {
-            playGames();
+            playGame();
         } else {
             System.out.println("Thank you for playing our games. Bye!");
             System.exit(0);
         }
     }
 
-    static void playGames() {
-        playGame();
+    static void playGame() {
+        playGames();
     }
 
     static void checkAnswer(int guesse) {
