@@ -9,7 +9,7 @@ package ngohlumdoun.chonnipa.lab3;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 09:50 AM
+ * Last Updated : 12 Dec 2024 10:01 AM
  */
 
 import java.util.Scanner;
@@ -95,7 +95,13 @@ public class ConfigurableNumberGuessingGame {
         input.close();
 
         // Display the number of attempts made by the user
-        System.out.println("You have tried " + count + " times. You ran out of guesses");
+        System.out.print("You have tried " + count + " time");
+
+        // If user made more than one attempt, add "s" after "time" to make it plural.
+        if (count > 1)
+            System.out.print("s");
+
+        System.out.println(". You ran out of guesses");
         System.out.println("The answer is " + answer);
     }
 }

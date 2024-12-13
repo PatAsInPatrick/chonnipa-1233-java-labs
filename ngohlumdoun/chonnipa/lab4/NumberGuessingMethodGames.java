@@ -49,14 +49,14 @@ public class NumberGuessingMethodGames {
         }
 
         // Get the maximum number of tries provided by the user
-        System.out.print("Enter the maximun number of tries:");
+        System.out.print("Enter the maximum number of tries:");
         maxTries = input.nextInt();
 
         // Validate the maximum number of tries input
         while (0 >= maxTries) {
             System.out.println("The maximum number of tries must be greater than 0");
 
-            System.out.print("Enter the maximun number of tries:");
+            System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
         }
     }

@@ -101,7 +101,13 @@ public class NumberGuessingGames {
 
             if (!answerCorrectly) {
                 // Display the number of attempts made by the user
-                System.out.println("You have tried " + count + " times. You ran out of guesses");
+                System.out.print("You have tried " + count + " time");
+
+                // If user made more than one attempt, add "s" after "time" to make it plural.
+                if (count > 1)
+                    System.out.print("s");
+
+                System.out.println(". You ran out of guesses");
                 System.out.print("The answer is " + answer);
             }
 
