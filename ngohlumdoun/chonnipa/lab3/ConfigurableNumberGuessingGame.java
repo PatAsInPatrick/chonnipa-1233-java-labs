@@ -9,7 +9,7 @@ package ngohlumdoun.chonnipa.lab3;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 13 Dec 2024 01:07 AM
+ * Last Updated : 12 Dec 2024 09:50 AM
  */
 
 import java.util.Scanner;
@@ -39,14 +39,14 @@ public class ConfigurableNumberGuessingGame {
         int answer = min + (int) (Math.random() * ((max - min) + 1));
 
         // Get the maximum number of tries provided by the user
-        System.out.print("Enter the maximun number of tries:");
+        System.out.print("Enter the maximum number of tries:");
         int maxTries = input.nextInt();
 
         // Validate the maximum number of tries input
         while (0 >= maxTries) {
             System.out.println("The maximum number of tries must be greater than 0");
 
-            System.out.print("Enter the maximun number of tries:");
+            System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
         }
 

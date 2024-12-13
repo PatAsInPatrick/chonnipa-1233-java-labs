@@ -14,7 +14,7 @@ import java.util.Scanner;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 03:39 AM
+ * Last Updated : 12 Dec 2024 09:20 AM
  */
 
 public class NumberGuessingMethodGames {
@@ -62,16 +62,17 @@ public class NumberGuessingMethodGames {
     }
 
     static void genAnswer() {
+        // Generate a random number between the min and max values
         answer = min + (int) (Math.random() * ((max - min) + 1));
     }
 
     static void playGame() {
         genAnswer();
 
+        count = 0;
         // Display the welcome message
         System.out.println("Welcome to a number guessing game!");
 
-        count = 0;
         for (int i = 0; i < maxTries; i++) {
             // Get the user input number
             System.out.print("Enter an integer between " + min + " and " + max + ":");
@@ -113,6 +114,7 @@ public class NumberGuessingMethodGames {
     }
 
     static void checkAnswer(int guesse) {
+        
         if (guesse == answer) {
             // Increment the count of attempts made by the user
             count++;
