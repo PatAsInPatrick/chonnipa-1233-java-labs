@@ -75,11 +75,7 @@ public class ConfigurableNumberGuessingGame {
                 // Increment the count of attempts made by the user
                 count++;
                 System.out.println("Congratulations!");
-                System.out.print("You have tried " + count + " time");
-
-                // If user made more than one attempt, add "s" after "time" to make it plural.
-                if (count > 1)
-                    System.out.print("s");
+                System.out.println("You have tried " + count + ((count > 1) ? " times" : " time"));
 
                 System.exit(-1);
             } else if (userInput > answer) {
@@ -95,13 +91,8 @@ public class ConfigurableNumberGuessingGame {
         input.close();
 
         // Display the number of attempts made by the user
-        System.out.print("You have tried " + count + " time");
-
-        // If user made more than one attempt, add "s" after "time" to make it plural.
-        if (count > 1)
-            System.out.print("s");
-
-        System.out.println(". You ran out of guesses");
+        System.out.println(
+                "You have tried " + count + ((count > 1) ? " times" : " time") + ". You ran out of guesses");
         System.out.println("The answer is " + answer);
     }
 }

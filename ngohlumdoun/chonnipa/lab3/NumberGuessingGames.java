@@ -79,11 +79,7 @@ public class NumberGuessingGames {
                     // Increment the count of attempts made by the user
                     count++;
                     System.out.println("Congratulations!");
-                    System.out.print("You have tried " + count + " time");
-
-                    // If user made more than one attempt, add "s" after "time" to make it plural.
-                    if (count > 1)
-                        System.out.print("s");
+                    System.out.println("You have tried " + count + ((count > 1) ? " times" : " time"));
 
                     answerCorrectly = true;
                     break;
@@ -101,18 +97,13 @@ public class NumberGuessingGames {
 
             if (!answerCorrectly) {
                 // Display the number of attempts made by the user
-                System.out.print("You have tried " + count + " time");
-
-                // If user made more than one attempt, add "s" after "time" to make it plural.
-                if (count > 1)
-                    System.out.print("s");
-
-                System.out.println(". You ran out of guesses");
-                System.out.print("The answer is " + answer);
+                System.out.println(
+                        "You have tried " + count + ((count > 1) ? " times" : " time") + ". You ran out of guesses");
+                System.out.println("The answer is " + answer);
             }
 
             // Ask the user if they want to play again
-            System.out.print("\nWant to play again (Y or y):");
+            System.out.print("Want to play again (Y or y):");
             String userAnswer = input.next();
 
             // If the user chooses to play again, start a new game
