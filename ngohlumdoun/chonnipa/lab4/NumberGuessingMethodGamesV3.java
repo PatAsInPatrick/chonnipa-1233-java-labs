@@ -13,7 +13,7 @@ import java.util.Scanner;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 12 Dec 2024 10:41 AM
+ * Last Updated : 18 Dec 2024 10:25 PM
  */
 
 public class NumberGuessingMethodGamesV3 {
@@ -27,9 +27,9 @@ public class NumberGuessingMethodGamesV3 {
     static int count;
     static boolean answerCorrectly = false;
     static int[] userGuesses = new int[10];
-    static int totalGamesplayed = 1;
+    static int totalGamesPlayed = 1;
     static int totalGameWin = 0;
-    static int[] guessesPerGame;
+    static int[] guessesPerGame = new int[10];
 
     public static void main(String[] args) {
         configure();
@@ -63,9 +63,6 @@ public class NumberGuessingMethodGamesV3 {
             System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
         }
-
-        // Initialize arrays
-        guessesPerGame = new int[maxTries];
     }
 
     static void genAnswer() {
@@ -120,7 +117,7 @@ public class NumberGuessingMethodGamesV3 {
 
         // If the user chooses to play again, start a new game
         if (userAnswer.equals("Y") || userAnswer.equals("y")) {
-            totalGamesplayed++;
+            totalGamesPlayed++;
             playGame();
         } else {
             System.out.println("Thank you for playing our games. Bye!");
@@ -130,7 +127,6 @@ public class NumberGuessingMethodGamesV3 {
     }
 
     static void playGame() {
-        guessesPerGame[totalGamesplayed - 1] = count;
         playGames();
     }
 
@@ -190,6 +186,8 @@ public class NumberGuessingMethodGamesV3 {
     }
 
     static void displayGameLog() {
+        // Display the game log with the answer, guesses, and whether the user won
+        guessesPerGame[totalGamesPlayed - 1] = count;
         System.out.println("Game log:Answer: " + answer + ", Guesses: " + count + ", Win: " + answerCorrectly);
     }
 
@@ -197,9 +195,9 @@ public class NumberGuessingMethodGamesV3 {
         // Display the total number of games played, total games won, win ratio,
         // average number of guesses per game, and the high score (the lowest number
         System.out.println("===== All Games Stats =====");
-        System.out.println("Total games played: " + totalGamesplayed);
+        System.out.println("Total games played: " + totalGamesPlayed);
         System.out.println("Total games win: " + totalGameWin);
-        System.out.println("Win ratio: " + ((double) (totalGameWin / (double) totalGamesplayed) * 100) + "%");
+        System.out.println("Win ratio: " + ((double) (totalGameWin / (double) totalGamesPlayed) * 100) + "%");
         System.out.println("Average number of guesses per game: " + calculateAverageAttempts());
         System.out.println("High score (The lowest number of guesses): " + calculateHighScore());
     }
@@ -210,7 +208,7 @@ public class NumberGuessingMethodGamesV3 {
         for (int i = 0; i < guessesPerGame.length; i++) {
             sum += guessesPerGame[i];
         }
-        return sum / totalGamesplayed;
+        return sum / totalGamesPlayed;
     }
 
     static int calculateHighScore() {
