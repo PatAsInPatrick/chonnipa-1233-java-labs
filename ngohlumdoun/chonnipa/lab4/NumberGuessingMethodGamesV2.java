@@ -99,13 +99,8 @@ public class NumberGuessingMethodGamesV2 {
 
         if (!answerCorrectly) {
             // Display the number of attempts made by the user
-            System.out.print("You have tried " + count + " time");
-
-            // If user made more than one attempt, add "s" after "time" to make it plural.
-            if (count > 1)
-                System.out.print("s");
-
-            System.out.println(". You ran out of guesses");
+            System.out.println(
+                    "You have tried " + count + ((count > 1) ? " times" : " time") + ". You ran out of guesses");
             System.out.println("The answer is " + answer);
         }
 
@@ -133,11 +128,7 @@ public class NumberGuessingMethodGamesV2 {
             // Increment the count of attempts made by the user
             count++;
             System.out.println("Congratulations!");
-            System.out.print("You have tried " + count + " time");
-
-            // If user made more than one attempt, add "s" after "time" to make it plural.
-            if (count > 1)
-                System.out.println("s");
+            System.out.println("You have tried " + count + ((count > 1) ? " times" : " time"));
 
             answerCorrectly = true;
 
@@ -154,7 +145,7 @@ public class NumberGuessingMethodGamesV2 {
 
     static void displayAllGuesses() {
         // Display all the user's guesses in reverse order
-        for (int i = 0; i < maxTries; i++) {
+        for (int i = 0; i < count; i++) {
             System.out.println("Guess " + (i + 1) + ": " + userGuesses[i]);
         }
     }
@@ -163,7 +154,7 @@ public class NumberGuessingMethodGamesV2 {
         // Ask the user to enter a specific guess number
         System.out.print("Enter the guess number:");
         int guessNumber = input.nextInt();
-        System.out.println("Guess " + guessNumber + ": " + userGuesses[guessNumber-1]);
+        System.out.println("Guess " + guessNumber + ": " + userGuesses[guessNumber - 1]);
 
     }
 
