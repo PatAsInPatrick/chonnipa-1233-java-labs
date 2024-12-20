@@ -13,11 +13,17 @@ package ngohlumdoun.chonnipa.lab5;
  */
 
 public class RecursiveMethods {
+
+    /**
+     * Recursively finds the sum of digits in a number.
+     * Example: For the number 123, the answer is 1+2+3 = 6
+     * 
+     * @param number the input number
+     * @return sum of digits
+     */
     public static int sumOfDigits(int number) {
         int lastDigits = number % 10;
         int remainder = number / 10;
-
-        // Recursively finds the sum of digits in a number.
         if (remainder == 0) {
             return lastDigits;
         } else {
@@ -25,8 +31,14 @@ public class RecursiveMethods {
         }
     }
 
+    /**
+     * Recursively reverses an array between start and end indices.
+     * 
+     * @param arr   the array to reverse
+     * @param start starting index
+     * @param end   ending index
+     */
     public static void reverseArray(int[] arr, int start, int end) {
-        // Recursively reverses an array between start and end indices
         if (start < end) {
             // Swap elements at start and end indices and recursively call the method
             int temp = arr[start];
@@ -39,8 +51,15 @@ public class RecursiveMethods {
         }
     }
 
+    /**
+     * Recursively checks if an array is palindrome.
+     * 
+     * @param arr   the array to check
+     * @param start starting index
+     * @param end   ending index
+     * @return true if palindrome, false otherwise
+     */
     public static boolean isPalindrome(int[] arr, int start, int end) {
-        // Recursively checks if an array is a palindrome between start and end indices
         if (start >= end) {
             return true;
         } else if (arr[start] != arr[end]) {
@@ -60,7 +79,7 @@ public class RecursiveMethods {
         // Test cases for sumOfDigits method
         System.out.println("Sum of digits in 45: " + sumOfDigits(45));
         System.out.println("Sum of digits in 12345: " + sumOfDigits(12345));
-        
+
         System.out.println();
 
         // Test cases for reverseArray method

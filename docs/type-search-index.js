@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ngohlumdoun.chonnipa.lab5","l":"RecursiveMethods"}];updateSearchResults();
