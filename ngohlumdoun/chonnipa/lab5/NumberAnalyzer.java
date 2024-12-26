@@ -102,11 +102,11 @@ public class NumberAnalyzer {
 
         // True case
         printArray(testingArray1);
-        System.out.println("number1 is sorted: " + isSorted(testingArray1));
+        System.out.println("numbers1 is sorted: " + isSorted(testingArray1));
 
         // False case
         printArray(testingArray2);
-        System.out.println("number2 is sorted: " + isSorted(testingArray2));
+        System.out.println("numbers2 is sorted: " + isSorted(testingArray2));
 
     }
 }
