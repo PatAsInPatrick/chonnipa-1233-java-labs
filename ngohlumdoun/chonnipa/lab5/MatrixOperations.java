@@ -13,7 +13,7 @@ import java.util.Scanner;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 26 Dec 2024 01:09 PM
+ * Last Updated : 27 Dec 2024 03:45 AM
  */
 
 public class MatrixOperations {
@@ -217,13 +217,13 @@ public class MatrixOperations {
             System.out.println("Row " + (i + 1) + " sum: " + rowSums[i]);
         }
 
-        System.out.println();
+        System.out.println("\nColumns sums:");
 
         // sum of all columns
         for (int j = 0; j < columns; j++) {
             for (int i = 0; i < rows; i++)
                 columnSums[j] += matrix[i][j];
-            System.out.println("column " + (j + 1) + " sum: " + columnSums[j]);
+            System.out.println("Column " + (j + 1) + " sum: " + columnSums[j]);
         }
     }
 
@@ -244,10 +244,13 @@ public class MatrixOperations {
     }
 
     public static void displayDiagonal() {
-        System.out.println("\nDiagonal elements:");
-        for (int i = 0; i < rows; i++)
-            System.out.print(matrix[i][i] + "  ");
+        int diagonalMatrix[][] = new int[rows][columns];
 
-        System.out.println();
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
+                diagonalMatrix[i][i] = matrix[i][i];
+
+        System.out.println("\nDiagonal elements:");
+        displayMatrix(diagonalMatrix);
     }
 }
