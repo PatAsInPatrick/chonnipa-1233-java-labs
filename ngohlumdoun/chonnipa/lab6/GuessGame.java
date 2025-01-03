@@ -8,6 +8,7 @@ public class GuessGame {
     private int maxTries;
     private int answer;
     private int attempts;
+    private int userInput;
     public static Scanner input = new Scanner(System.in);
 
     public int getMin() {
@@ -22,6 +23,18 @@ public class GuessGame {
         return maxTries;
     }
 
+    public int getAttempts() {
+        return attempts;
+    }
+
+    public int getUserInput() {
+        return userInput;
+    }
+
+    public int getAnswer() {
+        return answer;
+    }
+
     public void setMin(int min) {
         this.min = min;
     }
@@ -34,9 +47,29 @@ public class GuessGame {
         this.maxTries = maxTries;
     }
 
+    public void setAttempts(int attempts) {
+        this.attempts = attempts;
+    }
+
+    public void setUserInput(int userInput) {
+        this.userInput = userInput;
+    }
+
+    public void setAnswer(int answer) {
+        this.answer = answer;
+    }
+
     public GuessGame() {
         this.min = 0;
         this.max = 100;
+        this.maxTries = 10;
+        this.answer = 0;
+        this.attempts = 0;
+    }
+
+    public GuessGame(int min, int max) {
+        this.min = min;
+        this.max = max;
         this.maxTries = 10;
         this.answer = 0;
         this.attempts = 0;
@@ -60,6 +93,7 @@ public class GuessGame {
 
     public void generateAnswer() {
         answer = min + (int) (Math.random() * ((max - min) + 1));
+        setAnswer(answer);
     }
 
     public boolean playSingleGame() {
@@ -74,13 +108,7 @@ public class GuessGame {
             // Get the user input number
             System.out.print("Enter an integer between " + min + " and " + max + ":");
             int userInput = input.nextInt();
-
-            // Validate the user input between the min and max values
-            while (min > userInput || max < userInput) {
-                System.out.println("The number must be between " + min + " and " + max);
-                System.out.print("Enter an integer between " + min + " and " + max + ":");
-                userInput = input.nextInt();
-            }
+            setUserInput(userInput);
 
             // Check if the user input is the target number
             if (userInput == answer) {
