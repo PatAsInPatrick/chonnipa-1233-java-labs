@@ -21,12 +21,13 @@ public class GuessGameV2 extends GuessGame {
 
             System.out.print("Enter the min value:");
             min = input.nextInt();
-            setMin(min);
 
             System.out.print("Enter the max value:");
             max = input.nextInt();
-            setMax(max);
         }
+        setMin(min);
+        setMax(max);
+
     }
 
     @Override
@@ -37,8 +38,9 @@ public class GuessGameV2 extends GuessGame {
             System.out.println("Invalid input: maxTries must be greater than 0.");
             System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
-            setMaxTries(maxTries);
         }
+        setMaxTries(maxTries);
+
     }
 
     @Override
