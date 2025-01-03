@@ -111,9 +111,9 @@ public class GuessGame {
             setUserInput(userInput);
 
             // Check if the user input is the target number
+            attempts++;
+            setAttempts(attempts);
             if (userInput == answer) {
-                // Increment the count of attempts made by the user
-                attempts++;
                 System.out.println("Congratulations! You've guessed the number in " + attempts
                         + ((attempts > 1) ? " attempts" : " attempt"));
 
@@ -122,12 +122,8 @@ public class GuessGame {
 
             } else if (userInput > answer) {
                 System.out.println("Try a lower number!");
-                // Increment the count of attempts made by the user
-                attempts++;
             } else {
                 System.out.println("Try a higher number!");
-                // Increment the count of attempts made by the user
-                attempts++;
             }
         }
 
