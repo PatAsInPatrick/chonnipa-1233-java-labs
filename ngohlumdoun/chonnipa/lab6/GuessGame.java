@@ -102,7 +102,7 @@ public class GuessGame {
 
         attempts = 0;
         // Display the welcome message
-        System.out.println("Welcome to a number guessing game!");
+        System.out.println("Welcome to the Number Guessing Game!");
 
         for (int i = 0; i < maxTries; i++) {
             // Get the user input number

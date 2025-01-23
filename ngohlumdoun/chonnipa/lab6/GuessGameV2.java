@@ -14,7 +14,6 @@ public class GuessGameV2 extends GuessGame {
     }
 
     public void configureGame(int min, int max) {
-
         // Validate the min and max input
         while (min > max) {
             System.out.println("Invalid input: max must be greater than or equal to min.");
@@ -27,12 +26,10 @@ public class GuessGameV2 extends GuessGame {
         }
         setMin(min);
         setMax(max);
-
     }
 
     @Override
     public void configureGame(int min, int max, int maxTries) {
-
         // Validate the maximum number of tries input
         while (0 >= maxTries) {
             System.out.println("Invalid input: maxTries must be greater than 0.");
@@ -40,7 +37,6 @@ public class GuessGameV2 extends GuessGame {
             maxTries = input.nextInt();
         }
         setMaxTries(maxTries);
-
     }
 
     @Override
@@ -54,7 +50,7 @@ public class GuessGameV2 extends GuessGame {
 
         int attempts = 0;
         // Display the welcome message
-        System.out.println("Welcome to a number guessing game!");
+        System.out.println("Welcome to the Number Guessing Game V2!");
 
         for (int i = 0; i < maxTries; i++) {
             // Get the user input number
