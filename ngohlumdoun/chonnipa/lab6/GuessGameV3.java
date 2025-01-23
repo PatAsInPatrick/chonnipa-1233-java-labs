@@ -1,6 +1,5 @@
 package ngohlumdoun.chonnipa.lab6;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class GuessGameV3 extends GuessGameV2 {
