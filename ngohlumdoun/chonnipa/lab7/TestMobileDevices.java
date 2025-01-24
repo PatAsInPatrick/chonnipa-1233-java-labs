@@ -1,5 +1,17 @@
 package ngohlumdoun.chonnipa.lab7;
 
+/**
+ * Test Mobile Devices Program:
+ * Test the implementations of these three classes
+ * Class MobileDevice, Class IPadAir, Class AppleWatch
+ * 
+ * Author: Chonnipa Ngohlumdoun
+ * ID : 673040123-3
+ * Sec : 2
+ * 
+ * Last Updated : 23 Jan 2025 04:30 PM
+ */
+
 public class TestMobileDevices {
     public static void main(String[] args) {
         IPadAir ipadAir1 = new IPadAir("Rose Gold", 19900.0, 64);
