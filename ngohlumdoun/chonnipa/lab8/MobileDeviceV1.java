@@ -6,12 +6,13 @@ import java.awt.*;
 /**
  * Mobile Device V1 Program:
  * Display a simple interface with two buttons "Cancel" and "OK".
+ * and add more Device Name, Brand, Price, Type above
  * 
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 28 Jan 2025 10:03 PM
+ * Last Updated : 28 Jan 2025 11:22 PM
  */
 
 public class MobileDeviceV1 extends MySimpleWindow {
@@ -31,7 +32,7 @@ public class MobileDeviceV1 extends MySimpleWindow {
     // Create and initialize Type
     protected JLabel typeLabel = new JLabel("Type:");
     protected ButtonGroup typeButtonGroup = new ButtonGroup();
-    protected JRadioButton smartphoneRadioButton = new JRadioButton("Smartphone");
+    protected JRadioButton smartphoneRadioButton = new JRadioButton("Smartphone", true);
     protected JRadioButton tabletRadioButton = new JRadioButton("Tablet");
 
     // Constructor
@@ -66,6 +67,9 @@ public class MobileDeviceV1 extends MySimpleWindow {
         // include typePanel in formPanel.
         formPanel.add(typePanel);
 
+        // Organize mainPanel
+        mainPanel.setLayout(new BorderLayout());
+
         // Add formPanel to mainPanel.
         mainPanel.add(formPanel, BorderLayout.NORTH);
 
@@ -75,6 +79,9 @@ public class MobileDeviceV1 extends MySimpleWindow {
         buttonPanel.add(resetButton);
         buttonPanel.add(submitButton);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+        // Add mainPanel to the frame.
+        add(mainPanel);
     }
 
     // Main method

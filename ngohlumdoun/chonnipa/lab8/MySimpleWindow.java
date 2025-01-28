@@ -40,7 +40,6 @@ public class MySimpleWindow extends JFrame {
     }
 
     protected void addComponents() {
-
         // Add resetButton and submitButton to buttonPanel.
         buttonPanel.add(resetButton);
         buttonPanel.add(submitButton);
