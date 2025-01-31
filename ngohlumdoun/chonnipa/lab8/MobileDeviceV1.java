@@ -16,7 +16,6 @@ import java.awt.*;
  */
 
 public class MobileDeviceV1 extends MySimpleWindow {
-
     // Create and initialize Device Name
     protected JLabel deviceNameLabel = new JLabel("Device Name:");
     protected JTextField deviceNameField = new JTextField(15);
@@ -35,53 +34,13 @@ public class MobileDeviceV1 extends MySimpleWindow {
     protected JRadioButton smartphoneRadioButton = new JRadioButton("Smartphone", true);
     protected JRadioButton tabletRadioButton = new JRadioButton("Tablet");
 
+    // Create and initialize formPanel and typePanel
+    protected JPanel formPanel = new JPanel();
+    protected JPanel typePanel = new JPanel();
+
     // Constructor
     public MobileDeviceV1(String title) {
         super(title);
-    }
-
-    @Override
-    protected void addComponents() {
-
-        // Create a new JPanel called formPanel.
-        JPanel formPanel = new JPanel();
-        formPanel.setLayout(new GridLayout(4, 2));
-
-        // Add JLabels and JTextFields.
-        formPanel.add(deviceNameLabel);
-        formPanel.add(deviceNameField);
-        formPanel.add(brandLabel);
-        formPanel.add(brandField);
-        formPanel.add(priceLabel);
-        formPanel.add(priceField);
-        formPanel.add(typeLabel);
-
-        // Create a new JPanel called typePanel and add the JRadioButtons
-        // The "Smartphone" button should be selected by default.
-        JPanel typePanel = new JPanel();
-        typeButtonGroup.add(smartphoneRadioButton);
-        typeButtonGroup.add(tabletRadioButton);
-        typePanel.add(smartphoneRadioButton);
-        typePanel.add(tabletRadioButton);
-
-        // include typePanel in formPanel.
-        formPanel.add(typePanel);
-
-        // Organize mainPanel
-        mainPanel.setLayout(new BorderLayout());
-
-        // Add formPanel to mainPanel.
-        mainPanel.add(formPanel, BorderLayout.NORTH);
-
-        // Add the buttons to a buttoPanel and
-        // include buttoPanel in mainPanel.
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(resetButton);
-        buttonPanel.add(submitButton);
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
-
-        // Add mainPanel to the frame.
-        add(mainPanel);
     }
 
     // Main method
@@ -93,6 +52,55 @@ public class MobileDeviceV1 extends MySimpleWindow {
                 createAndShowGUI();
             }
         });
+    }
+
+    @Override
+    protected void addComponents() {
+        setFormPanel();
+        setButtonPanel();
+        setMainPanel();
+
+        // Add mainPanel to the frame.
+        add(mainPanel);
+    }
+
+    @Override
+    protected void setMainPanel() {
+        // Organize mainPanel
+        mainPanel.setLayout(new BorderLayout());
+
+        // Add formPanel to mainPanel.
+        mainPanel.add(formPanel, BorderLayout.NORTH);
+
+        // Add buttonPanel to mainPanel.
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+    }
+
+    protected void setFormPanel() {
+        // Set formPanel.
+        formPanel.setLayout(new GridLayout(4, 2));
+
+        // Add JLabels and JTextFields.
+        formPanel.add(deviceNameLabel);
+        formPanel.add(deviceNameField);
+        formPanel.add(brandLabel);
+        formPanel.add(brandField);
+        formPanel.add(priceLabel);
+        formPanel.add(priceField);
+        formPanel.add(typeLabel);
+
+        setTypePanel();
+
+        // include typePanel in formPanel.
+        formPanel.add(typePanel);
+    }
+
+    protected void setTypePanel() {
+        // Add the JRadioButtons to the typePanel
+        typeButtonGroup.add(smartphoneRadioButton);
+        typeButtonGroup.add(tabletRadioButton);
+        typePanel.add(smartphoneRadioButton);
+        typePanel.add(tabletRadioButton);
     }
 
     public static void createAndShowGUI() {

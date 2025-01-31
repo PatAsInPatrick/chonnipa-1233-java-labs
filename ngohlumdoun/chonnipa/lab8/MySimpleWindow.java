@@ -14,7 +14,6 @@ import javax.swing.*;
  */
 
 public class MySimpleWindow extends JFrame {
-
     // Create and initialize resetButton and submitButton.
     protected JButton resetButton = new JButton("Cancel");
     protected JButton submitButton = new JButton("OK");
@@ -40,15 +39,22 @@ public class MySimpleWindow extends JFrame {
     }
 
     protected void addComponents() {
-        // Add resetButton and submitButton to buttonPanel.
-        buttonPanel.add(resetButton);
-        buttonPanel.add(submitButton);
-
-        // Add buttonPanel to mainPanel.
-        mainPanel.add(buttonPanel);
+        setButtonPanel();
+        setMainPanel();
 
         // Add mainPanel to the frame.
         add(mainPanel);
+    }
+
+    protected void setButtonPanel() {
+        // Add resetButton and submitButton to buttonPanel.
+        buttonPanel.add(resetButton);
+        buttonPanel.add(submitButton);
+    }
+
+    protected void setMainPanel() {
+        // Add buttonPanel to mainPanel.
+        mainPanel.add(buttonPanel);
     }
 
     protected void setFrameFeatures() {
