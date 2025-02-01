@@ -7,6 +7,7 @@ import java.awt.*;
  * Mobile Device V2 Program:
  * Display a simple interface with two buttons "Cancel" and "OK".
  * and add more Device Name, Brand, Price, Type above
+ * Add Operating System and features abive button
  * 
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
