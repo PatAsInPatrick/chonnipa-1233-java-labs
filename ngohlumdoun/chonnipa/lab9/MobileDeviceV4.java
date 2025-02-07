@@ -6,7 +6,7 @@ import java.awt.*;
 
 /**
  * Mobile Device V3 Program:
- * Add icons to the menu items
+ * Add icons to the menu items, change font, font size, and text color.
  * 
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
