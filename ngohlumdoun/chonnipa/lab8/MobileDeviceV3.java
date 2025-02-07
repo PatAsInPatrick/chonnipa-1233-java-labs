@@ -20,6 +20,34 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
     protected JMenu fileMenu = new JMenu("File");
     protected JMenu configMenu = new JMenu("Config");
 
+    // File Menu: Includes 'New', 'Open', 'Save', and 'Exit'.
+    protected JMenuItem newItem = new JMenuItem("New");
+    protected JMenuItem openItem = new JMenuItem("Open");
+    protected JMenuItem saveItem = new JMenuItem("Save");
+    protected JMenuItem exitItem = new JMenuItem("Exit");
+
+    // Config Menu: Includes submenus
+    protected JMenu colorMenu = new JMenu("Color");
+    protected JMenu sizeMenu = new JMenu("Size");
+    protected JMenu fontMenu = new JMenu("Font");
+
+    // Size Submenu: Contains 'Small', 'Medium', 'Large', and 'Extra Large'.
+    protected JMenuItem small = new JMenuItem("Small");
+    protected JMenuItem medium = new JMenuItem("Medium");
+    protected JMenuItem large = new JMenuItem("Large");
+    protected JMenuItem extraLarge = new JMenuItem("Extra Large");
+
+    // Color Submenu: Contains 'Black', 'Red', 'Green', and 'Blue'.
+    protected JMenuItem black = new JMenuItem("Black");
+    protected JMenuItem red = new JMenuItem("Red");
+    protected JMenuItem green = new JMenuItem("Green");
+    protected JMenuItem blue = new JMenuItem("Blue");
+
+    // Font Submenu: Contains 'Font 1', 'Font 2', and 'Font 3'.
+    protected JMenuItem font1 = new JMenuItem("Font 1");
+    protected JMenuItem font2 = new JMenuItem("Font 2");
+    protected JMenuItem font3 = new JMenuItem("Font 3");
+
     // Contructor
     public MobileDeviceV3(String title) {
         super(title);
@@ -41,14 +69,14 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
         setFormPanel();
         setExtraPanel();
         setButtonPanel();
-        setMenuBar();
+        addMenu();
         setMainPanel();
 
         // Add mainPanel to the frame.
         add(mainPanel);
     }
 
-    protected void setMenuBar() {
+    protected void addMenu() {
         setFileMenu();
         setConfigMenu();
         menuBar.add(fileMenu);
@@ -57,12 +85,6 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
     }
 
     protected void setFileMenu() {
-        // File Menu: Includes 'New', 'Open', 'Save', and 'Exit'.
-        JMenuItem newItem = new JMenuItem("New");
-        JMenuItem openItem = new JMenuItem("Open");
-        JMenuItem saveItem = new JMenuItem("Save");
-        JMenuItem exitItem = new JMenuItem("Exit");
-
         // add items to File Menu
         fileMenu.add(newItem);
         fileMenu.add(openItem);
@@ -71,21 +93,10 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
     }
 
     protected void setConfigMenu() {
-        // Config Menu: Includes submenus
-        JMenu sizeMenu = new JMenu("Size");
-        JMenu colorMenu = new JMenu("Color");
-        JMenu fontMenu = new JMenu("Font");
-
         // add Submenu to File Menu
         configMenu.add(sizeMenu);
         configMenu.add(colorMenu);
         configMenu.add(fontMenu);
-
-        // Size Submenu: Contains 'Small', 'Medium', 'Large', and 'Extra Large'.
-        JMenuItem small = new JMenuItem("Small");
-        JMenuItem medium = new JMenuItem("Medium");
-        JMenuItem large = new JMenuItem("Large");
-        JMenuItem extraLarge = new JMenuItem("Extra Large");
 
         // add subitems to Size Submenu
         sizeMenu.add(small);
@@ -93,22 +104,11 @@ public class MobileDeviceV3 extends MobileDeviceV2 {
         sizeMenu.add(large);
         sizeMenu.add(extraLarge);
 
-        // Color Submenu: Contains 'Black', 'Red', 'Green', and 'Blue'.
-        JMenuItem black = new JMenuItem("Black");
-        JMenuItem red = new JMenuItem("Red");
-        JMenuItem green = new JMenuItem("Green");
-        JMenuItem blue = new JMenuItem("Blue");
-
         // add items to Color Submenu
         colorMenu.add(black);
         colorMenu.add(red);
         colorMenu.add(green);
         colorMenu.add(blue);
-
-        // Font Submenu: Contains 'Font 1', 'Font 2', and 'Font 3'.
-        JMenuItem font1 = new JMenuItem("Font 1");
-        JMenuItem font2 = new JMenuItem("Font 2");
-        JMenuItem font3 = new JMenuItem("Font 3");
 
         // add items to Font Submenu
         fontMenu.add(font1);
