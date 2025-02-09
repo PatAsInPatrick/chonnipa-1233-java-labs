@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Mobile Device V4 Program:
+ * Mobile Device V5 Program:
  * Add a JList Component for Vendor Selection
  * Add a JSlider Component for Device Rating
  * 

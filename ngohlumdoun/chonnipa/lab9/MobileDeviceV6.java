@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Mobile Device V5 Program:
+ * Mobile Device V6 Program:
  * Customize Labels
  * Customize Text Fields & Text Areas
  * Customize Vendor List Appearance

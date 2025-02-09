@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Mobile Device V3 Program:
+ * Mobile Device V4 Program:
  * Add icons to the menu items, change font, font size, and text color.
  * 
  * Author: Chonnipa Ngohlumdoun
