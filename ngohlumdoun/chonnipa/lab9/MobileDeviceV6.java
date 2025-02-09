@@ -37,19 +37,12 @@ public class MobileDeviceV6 extends MobileDeviceV5 {
 
     @Override
     protected void addComponents() {
-        setFormPanel();
-        setExtraPanel();
-        setUltraPanel();
-        setButtonPanel();
-        setMainPanel();
+        super.addComponents();
 
         customizeLabel();
         customizeTFandTA();
         customizeVendorList();
         customizeButton();
-
-        // Add mainPanel to the frame.
-        add(mainPanel);
     }
 
     protected void customizeLabel() {

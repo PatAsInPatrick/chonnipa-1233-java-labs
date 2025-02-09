@@ -43,14 +43,9 @@ public class MobileDeviceV5 extends MobileDeviceV4 {
 
     @Override
     protected void addComponents() {
-        setFormPanel();
-        setExtraPanel();
-        setUltraPanel();
-        setButtonPanel();
-        setMainPanel();
+        super.addComponents();
 
-        // Add mainPanel to the frame.
-        add(mainPanel);
+        setUltraPanel();
     }
 
     @Override
