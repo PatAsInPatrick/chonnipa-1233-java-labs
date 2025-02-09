@@ -52,7 +52,7 @@ public class MobileDeviceV6 extends MobileDeviceV5 {
         add(mainPanel);
     }
 
-    protected void customizeLabel(){
+    protected void customizeLabel() {
         // Set font style to Arial, Bold, size 14
         deviceNameLabel.setFont(new Font("Arial", Font.BOLD, 14));
         brandLabel.setFont(new Font("Arial", Font.BOLD, 14));
@@ -122,12 +122,12 @@ public class MobileDeviceV6 extends MobileDeviceV5 {
 
         // Set the Cancel button text color to Red and background color to White.
         resetButton.setForeground(Color.RED);
-        resetButton.setBackground(Color.WHITE);    }
+        resetButton.setBackground(Color.WHITE);
+    }
 
     public static void createAndShowGUI() {
         MobileDeviceV6 mdv6 = new MobileDeviceV6("Mobile Device V6");
         mdv6.addComponents();
         mdv6.setFrameFeatures();
     }
-
 }
