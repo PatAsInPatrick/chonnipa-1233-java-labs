@@ -1,11 +1,7 @@
 package ngohlumdoun.chonnipa.lab9;
 
-import javax.imageio.ImageIO;
+import java.awt.*;
 import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.awt.Graphics;
-import java.io.IOException;
-import java.io.File;
 
 /**
  * Mobile Device V7 Program:
@@ -16,10 +12,14 @@ import java.io.File;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 9 Feb 2025 05:57 PM
+ * Last Updated : 13 Feb 2025 11:50 PM
  */
 
 public class MobileDeviceV7 extends MobileDeviceV6 {
+
+    protected JPanel smallButtonPanel = new JPanel();
+    protected JPanel imagePanel = new JPanel();
+    protected ReadImage samsungImage = new ReadImage();
 
     // Contructor
     public MobileDeviceV7(String title) {
@@ -42,6 +42,21 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
         super.addComponents();
 
         preFillForm();
+    }
+
+    @Override
+    protected void setButtonPanel() {
+        buttonPanel.setLayout(new BorderLayout());
+
+        // Ad image to imagePanel
+        imagePanel.add(samsungImage);
+        buttonPanel.add(imagePanel, BorderLayout.CENTER);
+
+        // Add resetButton and submitButton to buttonPanel.
+        smallButtonPanel.add(resetButton);
+        smallButtonPanel.add(submitButton);
+
+        buttonPanel.add(smallButtonPanel, BorderLayout.SOUTH);
     }
 
     protected void preFillForm() {
@@ -67,23 +82,5 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
         MobileDeviceV7 mdv7 = new MobileDeviceV7("Mobile Device V7");
         mdv7.addComponents();
         mdv7.setFrameFeatures();
-    }
-
-    // Create a new class ReadImage to handle image rendering
-    public static class ReadImage extends JPanel {
-        BufferedImage samsungImage;
-        String filename = "images/S25-ultra.jpg";
-
-        public void paintComponent(Graphics g) {
-            g.drawImage(samsungImage, 0, 0, null);
-        }
-
-        public ReadImage() {
-            try {
-                samsungImage = ImageIO.read(new File(filename));
-            } catch (IOException e) {
-                e.printStackTrace(System.err);
-            }
-        }
     }
 }

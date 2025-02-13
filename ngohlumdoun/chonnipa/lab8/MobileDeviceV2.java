@@ -13,7 +13,7 @@ import java.awt.*;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 31 Jan 2025 11:29 PM
+ * Last Updated : 13 Feb 2025 11:50 PM
  */
 
 public class MobileDeviceV2 extends MobileDeviceV1 {
@@ -29,6 +29,8 @@ public class MobileDeviceV2 extends MobileDeviceV1 {
 
     // Create and initialize extraPanel
     protected JPanel extraPanel = new JPanel();
+    protected JPanel forExPanel1 = new JPanel();
+    protected JPanel forExPanel2 = new JPanel();
 
     // Contructor
     public MobileDeviceV2(String title) {
@@ -73,15 +75,22 @@ public class MobileDeviceV2 extends MobileDeviceV1 {
     }
 
     protected void setExtraPanel() {
-        extraPanel.setLayout(new GridLayout(2, 2));
-
+        extraPanel.setLayout(new BorderLayout());
         setComboBox();
 
-        // Add labels and Combo Box to extraPanel.
-        extraPanel.add(OSLabel);
-        extraPanel.add(OSComboBox);
-        extraPanel.add(featuresLabel);
-        extraPanel.add(scrollPane);
+        // Add small panel to store OS information
+        forExPanel1.setLayout(new GridLayout(1, 2));
+        forExPanel1.add(OSLabel);
+        forExPanel1.add(OSComboBox);
+
+        // Add small panel to store Features information
+        forExPanel2.setLayout(new GridLayout(1, 2));
+        forExPanel2.add(featuresLabel);
+        forExPanel2.add(scrollPane);
+
+        // Add 2 small to extraPanel.
+        extraPanel.add(forExPanel1, BorderLayout.NORTH);
+        extraPanel.add(forExPanel2, BorderLayout.CENTER);
     }
 
     protected void setComboBox() {

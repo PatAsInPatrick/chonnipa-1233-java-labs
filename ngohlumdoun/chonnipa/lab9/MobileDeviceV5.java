@@ -12,13 +12,13 @@ import java.awt.*;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 7 Feb 2025 10:20 AM
+ * Last Updated : 13 Feb 2025 11:50 PM
  */
 
 public class MobileDeviceV5 extends MobileDeviceV4 {
 
     protected JPanel ultraPanel = new JPanel();
-    protected JPanel devicePanel = new JPanel();
+    protected JPanel vendorPanel = new JPanel();
     protected JPanel ratePanel = new JPanel();
     protected JLabel vendorLabel = new JLabel("The device is available at:");
     protected JLabel rateLabel = new JLabel("Rate the device (0-10):");
@@ -56,7 +56,7 @@ public class MobileDeviceV5 extends MobileDeviceV4 {
         // Add formPanel to mainPanel.
         mainPanel.add(formPanel, BorderLayout.NORTH);
 
-        // Add extraPanel to mainPanel.
+        // Add ultraPanel to mainPanel.
         mainPanel.add(ultraPanel, BorderLayout.CENTER);
 
         // Add buttonPanel to mainPanel.
@@ -65,38 +65,38 @@ public class MobileDeviceV5 extends MobileDeviceV4 {
 
     protected void setUltraPanel() {
         ultraPanel.setLayout(new BorderLayout());
-        setDevicePanel();
+        setVendorPanel();
         setRatePanel();
 
-        // Add extraPanel, devicePanel and ratePanel to ultraPanel.
+        // Add extraPanel, vendorPanel and ratePanel to ultraPanel.
         ultraPanel.add(extraPanel, BorderLayout.NORTH);
-        ultraPanel.add(devicePanel, BorderLayout.CENTER);
+        ultraPanel.add(vendorPanel, BorderLayout.CENTER);
         ultraPanel.add(ratePanel, BorderLayout.SOUTH);
     }
 
-    protected void setDevicePanel() {
-        devicePanel.setLayout(new GridLayout(1, 2));
+    protected void setVendorPanel() {
+        vendorPanel.setLayout(new GridLayout(1, 2));
         setVendorList();
 
-        // Add labels and vendor list to devicePanel.
-        devicePanel.add(vendorLabel);
-        devicePanel.add(vendorLabel);
-        devicePanel.add(new JScrollPane(vendorList));
+        // Add labels and vendor list to vendorPanel.
+        vendorPanel.add(vendorLabel);
+        vendorPanel.add(new JScrollPane(vendorList));
     }
 
     protected void setRatePanel() {
-        ratePanel.setLayout(new GridLayout(2, 1));
+        ratePanel.setLayout(new BorderLayout());
         setRateSlider();
 
         // Add rateLabel and ratePanel to ratePanel.
-        ratePanel.add(rateLabel);
-        ratePanel.add(rateSlider);
+        ratePanel.add(rateLabel, BorderLayout.NORTH);
+        ratePanel.add(rateSlider, BorderLayout.CENTER);
     }
 
     protected void setVendorList() {
         String[] vendors = { "AIS", "True", "DTAC", "Shopee" };
         vendorList.setListData(vendors);
         vendorList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        vendorList.setVisibleRowCount(vendors.length);
     }
 
     protected void setRateSlider() {
