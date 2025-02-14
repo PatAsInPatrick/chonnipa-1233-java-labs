@@ -58,7 +58,7 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
         String deviceInfo = deviceNameField.getText();
         String brandInfo = brandField.getText();
         String priceInfo = priceField.getText();
-        String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone" : "Tablet";
+        String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone" : tabletRadioButton.isSelected() ? "Tablet" : "";
         String OSInfo = (String) OSComboBox.getSelectedItem();
         String featuresInfo = featuresTextArea.getText();
         List<String> vendorInfo = vendorList.getSelectedValuesList();
