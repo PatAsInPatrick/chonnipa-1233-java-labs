@@ -47,13 +47,13 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == submitButton) {
-            showOnPane();
+            showDeviceInfo();
         } else if (src == resetButton) {
             clearForm();
         }
     }
 
-    public void showOnPane() {
+    protected void showDeviceInfo() {
         // Declaration
         String deviceInfo = deviceNameField.getText();
         String brandInfo = brandField.getText();
@@ -77,7 +77,7 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
                 , "Device Information", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public void clearForm() {
+    protected void clearForm() {
         // Clear form fields.
         deviceNameField.setText("");
         brandField.setText("");
