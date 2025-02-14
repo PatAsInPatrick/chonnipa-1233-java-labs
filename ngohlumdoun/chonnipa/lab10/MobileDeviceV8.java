@@ -2,14 +2,16 @@ package ngohlumdoun.chonnipa.lab10;
 
 import ngohlumdoun.chonnipa.lab9.MobileDeviceV7;
 
+import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
  * Mobile Device V8 Program:
- * Pre-Fill the Form
- * Add image
+ * Add ActionListener
+ * Click Cancel -> clear form
+ * Click OK -> Show Device Information
  * 
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
@@ -59,19 +61,20 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
         String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone" : "Tablet";
         String OSInfo = (String) OSComboBox.getSelectedItem();
         String featuresInfo = featuresTextArea.getText();
-        String vendorInfo = (String) vendorList.getSelectedValuesList().get(0);
+        List<String> vendorInfo = vendorList.getSelectedValuesList();
         String rateInfo = String.valueOf(rateSlider.getValue());
 
-        // Show 
+        // Show Device Infomation
         JOptionPane.showMessageDialog(null,
-        "Device Name: " + deviceInfo + "\n" + 
-        "Brand: " + brandInfo + "\n" +
-        "Price: " + priceInfo + "\n" +
-        "Type: " + typeInfo + "\n" +
-        "Operation System: " + OSInfo + "\n" +
-        "Features: " + featuresInfo + "\n" +
-        "Available at: " + vendorInfo + "\n" +
-        "Rating: " + rateInfo);
+                "Device Name: " + deviceInfo + "\n" +
+                "Brand: " + brandInfo + "\n" +
+                "Price: " + priceInfo + "\n" +
+                "Type: " + typeInfo + "\n" +
+                "Operation System: " + OSInfo + "\n" +
+                "Features: " + featuresInfo + "\n" +
+                "Available at: " + vendorInfo.toString().replaceAll("[ \\[\\] ]", "") + "\n" +
+                "Rating: " + rateInfo
+                , "Device Information", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void clearForm() {
