@@ -72,7 +72,7 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
                 "- 5000mAh Battery\n" +
                 "- 6.8-inch AMOLED Display\n" +
                 "- 120Hz Refresh Rate\n" +
-                "- Fast Charging");
+                "- 5000mAh Battery with Fast Charging");
 
         // Available At : AIS (Preselected in JList)
         vendorList.setSelectedIndex(0);

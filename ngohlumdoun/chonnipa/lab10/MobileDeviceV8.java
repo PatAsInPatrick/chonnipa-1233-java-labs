@@ -6,6 +6,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/**
+ * Mobile Device V8 Program:
+ * Pre-Fill the Form
+ * Add image
+ * 
+ * Author: Chonnipa Ngohlumdoun
+ * ID : 673040123-3
+ * Sec : 2
+ * 
+ * Last Updated : 13 Feb 2025 10:05 AM
+ */
+
 public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
 
     // Contructor
@@ -33,17 +45,36 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == submitButton) {
-            createOptionPane();
+            showOnPane();
         } else if (src == resetButton) {
             clearForm();
         }
     }
 
-    protected void createOptionPane() {
-        JOptionPane.showMessageDialog(null, "Device Information");
+    public void showOnPane() {
+        // Declaration
+        String deviceInfo = deviceNameField.getText();
+        String brandInfo = brandField.getText();
+        String priceInfo = priceField.getText();
+        String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone" : "Tablet";
+        String OSInfo = (String) OSComboBox.getSelectedItem();
+        String featuresInfo = featuresTextArea.getText();
+        String vendorInfo = (String) vendorList.getSelectedValuesList().get(0);
+        String rateInfo = String.valueOf(rateSlider.getValue());
+
+        // Show 
+        JOptionPane.showMessageDialog(null,
+        "Device Name: " + deviceInfo + "\n" + 
+        "Brand: " + brandInfo + "\n" +
+        "Price: " + priceInfo + "\n" +
+        "Type: " + typeInfo + "\n" +
+        "Operation System: " + OSInfo + "\n" +
+        "Features: " + featuresInfo + "\n" +
+        "Available at: " + vendorInfo + "\n" +
+        "Rating: " + rateInfo);
     }
 
-    protected void clearForm() {
+    public void clearForm() {
         // Clear form fields.
         deviceNameField.setText("");
         brandField.setText("");
@@ -54,7 +85,7 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
         smartphoneRadioButton.setSelected(true);
 
         // Set Operating System to Android
-        OSComboBox.setSelectedItem("Android");
+        OSComboBox.setSelectedIndex(0);
 
         // Clear vendor selection list.
         vendorList.clearSelection();
@@ -67,5 +98,6 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
         MobileDeviceV8 mdv8 = new MobileDeviceV8("Mobile Device V8");
         mdv8.addComponents();
         mdv8.setFrameFeatures();
+        mdv8.addListeners();
     }
 }
