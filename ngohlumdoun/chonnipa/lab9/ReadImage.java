@@ -1,10 +1,9 @@
 package ngohlumdoun.chonnipa.lab9;
 
-import javax.swing.JPanel;
-import java.awt.Graphics;
-import java.awt.Dimension;
-import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ public class ReadImage extends JPanel {
     String filename = "images/S25-ultra.jpg";
 
     public void paintComponent(Graphics g) {
-        g.drawImage(samsungImage, 0, 0, null);
+        g.drawImage(samsungImage, 0, 0, getWidth(), getHeight(), null);
     }
 
     public ReadImage() {
@@ -24,10 +23,10 @@ public class ReadImage extends JPanel {
         }
     }
 
-    public Dimension getPreferredSize() {
-        if (samsungImage == null)
-            return new Dimension(100, 100);
-        else
-            return new Dimension(samsungImage.getWidth(), samsungImage.getHeight());
-    }
+    // public Dimension getPreferredSize() {
+    //     if (samsungImage == null)
+    //         return new Dimension(100, 100);
+    //     else
+    //         return new Dimension(samsungImage.getWidth(), samsungImage.getHeight());
+    // }
 }

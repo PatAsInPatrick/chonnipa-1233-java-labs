@@ -12,7 +12,7 @@ import javax.swing.*;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 13 Feb 2025 11:50 PM
+ * Last Updated : 13 Feb 2025 10:05 AM
  */
 
 public class MobileDeviceV7 extends MobileDeviceV6 {
@@ -46,17 +46,20 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
 
     @Override
     protected void setButtonPanel() {
-        buttonPanel.setLayout(new BorderLayout());
+    buttonPanel.setLayout(new BorderLayout());
 
-        // Ad image to imagePanel
-        imagePanel.add(samsungImage);
-        buttonPanel.add(imagePanel, BorderLayout.CENTER);
+    // Ad image to imagePanel
 
-        // Add resetButton and submitButton to buttonPanel.
-        smallButtonPanel.add(resetButton);
-        smallButtonPanel.add(submitButton);
+    samsungImage.setPreferredSize(new Dimension(600, 338));
 
-        buttonPanel.add(smallButtonPanel, BorderLayout.SOUTH);
+    imagePanel.add(samsungImage);
+    buttonPanel.add(imagePanel, BorderLayout.CENTER);
+
+    // Add resetButton and submitButton to buttonPanel.
+    smallButtonPanel.add(resetButton);
+    smallButtonPanel.add(submitButton);
+
+    buttonPanel.add(smallButtonPanel, BorderLayout.SOUTH);
     }
 
     protected void preFillForm() {
