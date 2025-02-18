@@ -94,7 +94,8 @@ public class MobileDeviceV9 extends MobileDeviceV8 implements ActionListener {
             int returnValue = fileChooser.showSaveDialog(this);
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
-                JOptionPane.showMessageDialog(this, "Data is saved to " + selectedFile.getName() + " successfully!");
+                JOptionPane.showMessageDialog(this, "Data is saved to " + selectedFile.getName() + " successfully!",
+                        "Save", JOptionPane.INFORMATION_MESSAGE);
             }
         } else if (src == exitItem) {
             // Exit menu : close the program.
