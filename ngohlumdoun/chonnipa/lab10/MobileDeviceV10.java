@@ -1,13 +1,9 @@
 package ngohlumdoun.chonnipa.lab10;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
+import java.util.List;
+import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ListSelectionListener;
-
-import java.awt.*;
+import javax.swing.event.*;
 
 /**
  * Mobile Device V10 Program:
@@ -17,7 +13,7 @@ import java.awt.*;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 18 Feb 2025 01:56 AM
+ * Last Updated : 18 Feb 2025 12:53 PM
  */
 
 public class MobileDeviceV10 extends MobileDeviceV9 implements ActionListener, ListSelectionListener, ChangeListener {
@@ -46,19 +42,53 @@ public class MobileDeviceV10 extends MobileDeviceV9 implements ActionListener, L
     @Override
     public void addListeners() {
         super.addListeners();
+
+        OSComboBox.addActionListener(this);
+        vendorList.addListSelectionListener(this);
+        rateSlider.addChangeListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // When the user selects a different **Operating System** from the drop-down
-        // (`JComboBox`), display a dialog box (`JOptionPane.showMessageDialog`) showing
-        // the new selected OS.
+        super.actionPerformed(e);
 
         Object src = e.getSource();
 
         if (src == OSComboBox) {
-            JOptionPane.showMessageDialog(this, "Data is saved to " + selectedFile.getName() + " successfully!");
+            // When the user selects a different Operating System -> new selection dialog
+            String selectedOS = (String) OSComboBox.getSelectedItem();
+            JOptionPane.showMessageDialog(this, "You selected Operating System: " + selectedOS, "OS Selection",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
+    }
 
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        Object src = e.getSource();
+
+        if (src == vendorList && !e.getValueIsAdjusting()) {
+            // When the user selects different Vendors -> new selection dialog
+            List<String> selectedVendorList = vendorList.getSelectedValuesList();
+            JOptionPane.showMessageDialog(this,
+                    "Device is available at: " + selectedVendorList.toString().replaceAll("[ \\[\\] ]", ""),
+                    "Vendor Selection",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        Object src = e.getSource();
+
+        if (src == rateSlider) {
+            // When the user changes the rating slider -> new rating dialog
+            int selectedRating = rateSlider.getValue();
+            JSlider Temp = (JSlider) e.getSource();
+
+            if (!Temp.getValueIsAdjusting()) {
+                JOptionPane.showMessageDialog(this, "New Rating: " + selectedRating, "Rating Adjustment",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }
 }
