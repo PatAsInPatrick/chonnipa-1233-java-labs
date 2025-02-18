@@ -69,10 +69,12 @@ public class MobileDeviceV10 extends MobileDeviceV9 implements ActionListener, L
         if (src == vendorList && !e.getValueIsAdjusting()) {
             // When the user selects different Vendors -> new selection dialog
             List<String> selectedVendorList = vendorList.getSelectedValuesList();
-            JOptionPane.showMessageDialog(this,
-                    "Device is available at: " + selectedVendorList.toString().replaceAll("[ \\[\\] ]", ""),
-                    "Vendor Selection",
-                    JOptionPane.INFORMATION_MESSAGE);
+            if (!selectedVendorList.isEmpty()) {
+                JOptionPane.showMessageDialog(this,
+                        "Device is available at: " + selectedVendorList.toString().replaceAll("[ \\[\\] ]", ""),
+                        "Vendor Selection",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }
 

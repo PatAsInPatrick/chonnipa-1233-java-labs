@@ -58,7 +58,8 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
         String deviceInfo = deviceNameField.getText();
         String brandInfo = brandField.getText();
         String priceInfo = priceField.getText();
-        String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone" : tabletRadioButton.isSelected() ? "Tablet" : "";
+        String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone"
+                : tabletRadioButton.isSelected() ? "Tablet" : "";
         String OSInfo = (String) OSComboBox.getSelectedItem();
         String featuresInfo = featuresTextArea.getText();
         List<String> vendorInfo = vendorList.getSelectedValuesList();
@@ -67,14 +68,14 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener {
         // Show Device Infomation
         JOptionPane.showMessageDialog(null,
                 "Device Name: " + deviceInfo + "\n" +
-                "Brand: " + brandInfo + "\n" +
-                "Price: " + priceInfo + "\n" +
-                "Type: " + typeInfo + "\n" +
-                "Operation System: " + OSInfo + "\n" +
-                "Features: " + featuresInfo + "\n" +
-                "Available at: " + vendorInfo.toString().replaceAll("[ \\[\\] ]", "") + "\n" +
-                "Rating: " + rateInfo
-                , "Device Information", JOptionPane.INFORMATION_MESSAGE);
+                        "Brand: " + brandInfo + "\n" +
+                        "Price: " + priceInfo + "\n" +
+                        "Type: " + typeInfo + "\n" +
+                        "Operation System: " + OSInfo + "\n" +
+                        "Features: " + featuresInfo + "\n" +
+                        "Available at: " + vendorInfo.toString().replaceAll("[ \\[\\] ]", "") + "\n" +
+                        "Rating: " + rateInfo,
+                "Device Information", JOptionPane.INFORMATION_MESSAGE);
     }
 
     protected void clearForm() {
