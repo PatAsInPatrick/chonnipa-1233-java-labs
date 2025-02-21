@@ -5,13 +5,13 @@ import javax.swing.*;
 
 /**
  * Mobile Device Complete V3 Program:
- * Show dialog when type somthing in JTextField
+ * Show dialog when component is resized, moved, shown, hidden
  * 
  * Author: Chonnipa Ngohlumdoun
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 21 Feb 2025 10:46 AM
+ * Last Updated : 21 Feb 2025 11:54 AM
  */
 
 public class MobileDeviceCompleteV3 extends MobileDeviceCompleteV2 implements ComponentListener {
