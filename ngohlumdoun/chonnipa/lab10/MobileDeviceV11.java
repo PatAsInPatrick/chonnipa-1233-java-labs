@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * Mobile Device V10 Program:
+ * Mobile Device V11 Program:
  * Show dialog when type JButton is changed
  * Add the mnemonic keys and accelerator keys for menu item
  * 
