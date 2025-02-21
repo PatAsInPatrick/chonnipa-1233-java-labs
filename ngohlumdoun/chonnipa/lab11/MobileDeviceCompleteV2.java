@@ -33,6 +33,7 @@ public class MobileDeviceCompleteV2 extends MobileDeviceComplete implements Acti
     public static void createAndShowGUI() {
         MobileDeviceCompleteV2 mdcv2 = new MobileDeviceCompleteV2("Mobile Device Complete V2");
         mdcv2.addComponents();
+        mdcv2.addMenus();
         mdcv2.setFrameFeatures();
         mdcv2.addListeners();
     }
