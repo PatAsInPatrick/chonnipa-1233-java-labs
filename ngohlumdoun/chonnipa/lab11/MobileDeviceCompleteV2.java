@@ -38,7 +38,6 @@ public class MobileDeviceCompleteV2 extends MobileDeviceComplete implements Acti
     }
 
     public void addListeners() {
-
         deviceNameField.addActionListener(this);
         brandField.addActionListener(this);
         priceField.addActionListener(this);
