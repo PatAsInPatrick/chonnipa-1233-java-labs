@@ -12,6 +12,7 @@ public class ReadImage extends JPanel {
     String filename = "images/S25-ultra.jpg";
 
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         g.drawImage(samsungImage, 0, 0, getWidth(), getHeight(), null);
     }
 
@@ -23,10 +24,12 @@ public class ReadImage extends JPanel {
         }
     }
 
-    // public Dimension getPreferredSize() {
-    //     if (samsungImage == null)
-    //         return new Dimension(100, 100);
-    //     else
-    //         return new Dimension(samsungImage.getWidth(), samsungImage.getHeight());
-    // }
+    public ReadImage(String filename) {
+        String name = "./images/" + filename;
+        try {
+            samsungImage = ImageIO.read(getClass().getResource(name));
+        } catch (IOException e) {
+            e.printStackTrace(System.err);
+        }
+    }
 }
