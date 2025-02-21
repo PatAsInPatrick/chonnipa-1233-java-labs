@@ -11,7 +11,7 @@ import javax.swing.*;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 18 Feb 2025 01:46 PM
+ * Last Updated : 21 Feb 2025 10:46 AM
  */
 
 public class MobileDeviceCompleteV2 extends MobileDeviceComplete implements ActionListener {
@@ -44,16 +44,14 @@ public class MobileDeviceCompleteV2 extends MobileDeviceComplete implements Acti
         priceField.addActionListener(this);
     }
 
-    // Display the entered text in a dialog box using
-    // JOptionPane.showMessageDialog(...).
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
 
-        // Implement logic to respond whenever the user presses Enter in any of these
-        // text fields.
+        // Display the entered text in a dialog box whenever the user presses Enter
         if (src == deviceNameField) {
-            JOptionPane.showMessageDialog(this, "You pressed Enter in Device Name field: " + deviceNameField.getText(), "Notification",
+            JOptionPane.showMessageDialog(this, "You pressed Enter in Device Name field: " + deviceNameField.getText(),
+                    "Notification",
                     JOptionPane.INFORMATION_MESSAGE);
         } else if (src == brandField) {
             JOptionPane.showMessageDialog(this, "Brand field says: " + brandField.getText(), "Notification",
