@@ -1,10 +1,7 @@
 package ngohlumdoun.chonnipa.lab11;
 
-import javax.swing.*;
-import javax.swing.border.Border;
-
 import ngohlumdoun.chonnipa.lab9.ReadImage;
-
+import javax.swing.*;
 import java.awt.*;
 
 public class MobileDeviceComplete extends JFrame {

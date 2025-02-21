@@ -27,7 +27,7 @@ public class ReadImage extends JPanel {
     public ReadImage(String filename) {
         String name = "./images/" + filename;
         try {
-            samsungImage = ImageIO.read(getClass().getResource(name));
+            samsungImage = ImageIO.read(new File(name));
         } catch (IOException e) {
             e.printStackTrace(System.err);
         }
