@@ -61,8 +61,7 @@ public class MobileDeviceCompleteV3 extends MobileDeviceCompleteV2 implements Co
     public void componentResized(ComponentEvent e) {
         int width = this.getWidth();
         int height = this.getHeight();
-        // JOptionPane.showMessageDialog(this, "Window resized to: " + width + " x " +
-        // height);
+        JOptionPane.showMessageDialog(this, "Window resized to: " + width + " x " + height);
     }
 
     // When the frame is moved, display a message showing the new position.
