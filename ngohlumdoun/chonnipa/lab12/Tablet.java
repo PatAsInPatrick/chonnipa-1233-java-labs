@@ -1,20 +1,18 @@
 package ngohlumdoun.chonnipa.lab12;
 
-import ngohlumdoun.chonnipa.lab7.MobileDevice;
-
-public class SmartPhone{
+public class Tablet {
     protected String name, brand, color;
     protected double price;
 
     // Contructor
-    public SmartPhone(String name, String brand, double price, String color) {
+    public Tablet(String name, String brand, double price, String color) {
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.color = color;
     }
 
-    public SmartPhone(String name, String brand, double price) {
+    public Tablet(String name, String brand, double price) {
         this.name = name;
         this.brand = brand;
         this.price = price;
