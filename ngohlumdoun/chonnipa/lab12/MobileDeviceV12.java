@@ -1,5 +1,16 @@
 package ngohlumdoun.chonnipa.lab12;
 
+/**
+ * Mobile Device V12 Program:
+ * Checking and Handling Exceptions in Text Fields
+ * 
+ * Author: Chonnipa Ngohlumdoun
+ * ID : 673040123-3
+ * Sec : 2
+ * 
+ * Last Updated : 7 Mar 2025 10:57 AM
+ */
+
 import ngohlumdoun.chonnipa.lab10.MobileDeviceV11;
 
 import javax.swing.*;
