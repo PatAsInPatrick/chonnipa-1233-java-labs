@@ -1,5 +1,7 @@
 package ngohlumdoun.chonnipa.lab12;
 
+import ngohlumdoun.chonnipa.lab7.MobileDevice;
+
 public class Tablet {
     protected String name, brand, color;
     protected double price;

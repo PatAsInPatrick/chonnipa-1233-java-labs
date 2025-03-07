@@ -42,6 +42,15 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
     }
 
     @Override
+    protected void setButtonPanel() {
+        super.setButtonPanel();
+        
+        // Add addButton and displayButton to smallButtonPanel.
+        smallButtonPanel.add(addButton);
+        smallButtonPanel.add(displayButton);
+    }
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == addButton) {

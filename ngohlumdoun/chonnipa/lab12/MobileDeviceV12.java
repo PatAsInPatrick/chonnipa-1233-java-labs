@@ -50,6 +50,8 @@ public class MobileDeviceV12 extends MobileDeviceV11 {
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         Object srcObject = e.getSource();
+
+        // Handling all three text fields
         if (srcObject == deviceNameField) {
             handleNormalTextField(deviceNameField, brandField);
         } else if (srcObject == brandField) {
@@ -60,6 +62,7 @@ public class MobileDeviceV12 extends MobileDeviceV11 {
     }
 
     protected void setName() {
+        // differentiate between different components
         deviceNameField.setName("Device Name");
         brandField.setName("Brand");
         priceField.setName("Price");
