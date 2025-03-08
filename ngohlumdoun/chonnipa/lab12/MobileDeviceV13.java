@@ -40,7 +40,7 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
     }
 
     public static void createAndShowGUI() {
-        MobileDeviceV13 mdv13 = new MobileDeviceV13("Mobile Device V3");
+        MobileDeviceV13 mdv13 = new MobileDeviceV13("Mobile Device V13");
         mdv13.addComponents();
         mdv13.setFrameFeatures();
         mdv13.addListeners();

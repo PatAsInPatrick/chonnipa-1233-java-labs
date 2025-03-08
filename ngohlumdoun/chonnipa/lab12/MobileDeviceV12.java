@@ -32,7 +32,7 @@ public class MobileDeviceV12 extends MobileDeviceV11 {
     }
 
     public static void createAndShowGUI() {
-        MobileDeviceV12 mdv12 = new MobileDeviceV12("Mobile Device V2");
+        MobileDeviceV12 mdv12 = new MobileDeviceV12("Mobile Device V12");
         mdv12.addComponents();
         mdv12.setFrameFeatures();
         mdv12.addListeners();
