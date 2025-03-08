@@ -8,16 +8,22 @@ package ngohlumdoun.chonnipa.lab12;
  * ID : 673040123-3
  * Sec : 2
  * 
- * Last Updated : 7 Mar 2025 10:57 AM
+ * Last Updated : 8 Mar 2025 09:32 PM
  */
 
 import javax.swing.*;
+
+import ngohlumdoun.chonnipa.lab7.MobileDevice;
+
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class MobileDeviceV13 extends MobileDeviceV12 {
 
+    // GUI components
     protected JButton addButton = new JButton("Add");
     protected JButton displayButton = new JButton("Display");
+    protected ArrayList<MobileDevice> deviceAL = new ArrayList<>();
 
     // Constructor
     public MobileDeviceV13(String title) {
@@ -42,9 +48,16 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
     }
 
     @Override
+    public void addListeners() {
+        super.addListeners();
+        addButton.addActionListener(this);
+        displayButton.addActionListener(this);
+    }
+
+    @Override
     protected void setButtonPanel() {
         super.setButtonPanel();
-        
+
         // Add addButton and displayButton to smallButtonPanel.
         smallButtonPanel.add(addButton);
         smallButtonPanel.add(displayButton);
@@ -64,9 +77,31 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
 
     protected void handleAddButton() {
 
+        String deviceInfo = deviceNameField.getText();
+        String brandInfo = brandField.getText();
+        double priceInfo = Double.parseDouble(priceField.getText());
+        String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone"
+                : tabletRadioButton.isSelected() ? "Tablet" : "";
+
+        // Create object of each device then add to deviceAL (MobileDevice)
+        if (smartphoneRadioButton.isSelected()) {
+            SmartPhone newPhone = new SmartPhone(deviceInfo, brandInfo, priceInfo);
+            deviceAL.add(newPhone);
+        } else {
+            Tablet newTablet = new Tablet(deviceInfo, brandInfo, priceInfo);
+            deviceAL.add(newTablet);
+        }
+
+        JOptionPane.showMessageDialog(this, typeInfo + " " + deviceInfo + " is added");
     }
 
     protected void handleDisplayButton() {
+        // Show all devices in deviceAL using StringBuilder
+        StringBuilder mobileList = new StringBuilder();
+        for (MobileDevice eachDevice : deviceAL) {
+            mobileList.append(eachDevice.toString() + "\n");
+        }
 
+        JOptionPane.showMessageDialog(this, mobileList);
     }
 }

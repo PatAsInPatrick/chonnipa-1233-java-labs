@@ -2,7 +2,7 @@ package ngohlumdoun.chonnipa.lab12;
 
 import ngohlumdoun.chonnipa.lab7.MobileDevice;
 
-public class SmartPhone{
+public class SmartPhone extends MobileDevice {
     protected String name, brand, color;
     protected double price;
 
@@ -19,5 +19,15 @@ public class SmartPhone{
         this.brand = brand;
         this.price = price;
         this.color = null;
+    }
+
+    @Override
+    public String toString() {
+        return "SmartPhone: " + name + " (" + brand + ") " + price + " Baht";
+    }
+
+    @Override
+    public boolean isWatch() {
+        return false;
     }
 }
