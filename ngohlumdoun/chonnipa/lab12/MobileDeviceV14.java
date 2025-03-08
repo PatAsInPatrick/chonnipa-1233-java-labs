@@ -108,11 +108,11 @@ public class MobileDeviceV14 extends MobileDeviceV13 {
                 scanner.nextLine();
             }
 
-            // Add all devices in together using StringBuilder
+            // Add all devices together using StringBuilder
             StringBuilder message = new StringBuilder();
             message.append("Read devices from the file ").append(selectedFile).append(" are as follows:\n");
 
-            // Read each device line
+            // Read each device line and add to message
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 deviceList.add(line);

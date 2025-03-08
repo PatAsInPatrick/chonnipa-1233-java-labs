@@ -2,9 +2,13 @@ package ngohlumdoun.chonnipa.lab12;
 
 import ngohlumdoun.chonnipa.lab7.MobileDevice;
 
-public class SmartPhone extends MobileDevice {
+import java.io.Serializable;
+
+public class SmartPhone extends MobileDevice implements Serializable{
     protected String name, brand, color;
     protected double price;
+
+    private static final long serialVersionUID = 1L;
 
     // Contructor
     public SmartPhone(String name, String brand, double price, String color) {
