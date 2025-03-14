@@ -22,7 +22,7 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
     // GUI components
     protected JButton addButton = new JButton("Add");
     protected JButton displayButton = new JButton("Display");
-    protected ArrayList<MobileDevice> deviceAL = new ArrayList<>();
+    protected ArrayList<MobileDevice> deviceList = new ArrayList<>();
 
     // Constructor
     public MobileDeviceV13(String title) {
@@ -44,6 +44,7 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
         mdv13.setFrameFeatures();
         mdv13.addListeners();
         mdv13.setName();
+        mdv13.enableKeyboard();
     }
 
     @Override
@@ -82,22 +83,22 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
         String typeInfo = smartphoneRadioButton.isSelected() ? "Smartphone"
                 : tabletRadioButton.isSelected() ? "Tablet" : "";
 
-        // Create object of each device then add to deviceAL (MobileDevice)
+        // Create object of each device then add to deviceList (MobileDevice)
         if (smartphoneRadioButton.isSelected()) {
             SmartPhone newPhone = new SmartPhone(deviceInfo, brandInfo, priceInfo);
-            deviceAL.add(newPhone);
+            deviceList.add(newPhone);
         } else {
             Tablet newTablet = new Tablet(deviceInfo, brandInfo, priceInfo);
-            deviceAL.add(newTablet);
+            deviceList.add(newTablet);
         }
 
         JOptionPane.showMessageDialog(this, typeInfo + " " + deviceInfo + " is added");
     }
 
     protected void handleDisplayButton() {
-        // Show all devices in deviceAL using StringBuilder
+        // Show all devices in deviceList using StringBuilder
         StringBuilder mobileList = new StringBuilder();
-        for (MobileDevice eachDevice : deviceAL) {
+        for (MobileDevice eachDevice : deviceList) {
             mobileList.append(eachDevice.toString() + "\n");
         }
 

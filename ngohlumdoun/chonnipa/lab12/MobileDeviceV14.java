@@ -42,6 +42,7 @@ public class MobileDeviceV14 extends MobileDeviceV13 {
         mdv14.setFrameFeatures();
         mdv14.addListeners();
         mdv14.setName();
+        mdv14.enableKeyboard();
     }
 
     @Override
@@ -65,6 +66,8 @@ public class MobileDeviceV14 extends MobileDeviceV13 {
             JOptionPane.showMessageDialog(this, "Opening: " + selectedFile);
             readFromFile(selectedFile);
         }
+
+        deviceList.clear();
     }
 
     protected void handleMenuSave() {
@@ -79,11 +82,9 @@ public class MobileDeviceV14 extends MobileDeviceV13 {
 
     protected void saveToFile(File selectedFile) {
         try (PrintWriter write = new PrintWriter(new FileWriter(selectedFile))) {
-            // Write file name not the full file path
-            write.println(selectedFile.getName());
 
             // Write each device to the file
-            for (MobileDevice eachDevice : deviceAL) {
+            for (MobileDevice eachDevice : deviceList) {
                 write.println(eachDevice.toString());
             }
 
@@ -97,30 +98,49 @@ public class MobileDeviceV14 extends MobileDeviceV13 {
 
     protected void readFromFile(File selectedFile) {
         try {
-            // Create new ArrayList to hold devices from file
-            ArrayList<String> deviceList = new ArrayList<>();
-
             // Create a scanner to read the file
-            Scanner scanner = new java.util.Scanner(selectedFile);
+            Scanner scanner = new Scanner(selectedFile);
 
-            // Skip the first line (file name)
-            if (scanner.hasNextLine()) {
-                scanner.nextLine();
+            // Read each device line
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+
+                // Parse the line based on the format: "Type: Model (Brand) Price Baht"
+                String[] parts = line.split(": ");
+                String type = parts[0]; // SmartPhone or Tablet
+
+                // Split the rest by parentheses to get model and brand
+                int brandStart = parts[1].indexOf("(");
+                int brandEnd = parts[1].indexOf(")");
+
+                String name = parts[1].substring(0, brandStart).trim();
+                String brand = parts[1].substring(brandStart + 1, brandEnd);
+
+                // Get the price (removing "Baht" and trimming)
+                String priceStr = parts[1].substring(brandEnd + 1, parts[1].indexOf("Baht")).trim();
+                double price = Double.parseDouble(priceStr);
+
+                // Create device and add to list (adjust constructor as needed)
+                MobileDevice device = null;
+                if (type.equals("SmartPhone")) {
+                    device = new SmartPhone(name, brand, price);
+                } else if (type.equals("Tablet")) {
+                    device = new Tablet(name, brand, price);
+                }
+
+                deviceList.add(device);
             }
 
             // Add all devices together using StringBuilder
             StringBuilder message = new StringBuilder();
-            message.append("Read devices from the file ").append(selectedFile).append(" are as follows:\n");
-
-            // Read each device line and add to message
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                deviceList.add(line);
-                message.append(line + "\n");
+            message.append("Read devices from the file ").append(selectedFile.getPath()).append(" are as follows:\n");
+            for (MobileDevice eachDevice : deviceList) {
+                message.append(eachDevice.toString() + "\n");
             }
-            scanner.close();
 
             JOptionPane.showMessageDialog(this, message);
+
+            scanner.close();
 
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error reading file: " + e.getMessage(),

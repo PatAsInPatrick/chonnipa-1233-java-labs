@@ -5,6 +5,7 @@ import ngohlumdoun.chonnipa.lab7.MobileDevice;
 import java.io.Serializable;
 
 public class Tablet extends MobileDevice implements Serializable{
+    protected static final String type = "Tablet";
     protected String name, brand, color;
     protected double price;
 
@@ -27,7 +28,7 @@ public class Tablet extends MobileDevice implements Serializable{
 
     @Override
     public String toString() {
-        return "Tablet: " + name + " (" + brand + ") " + price + " Baht";
+        return type + ": " + name + " (" + brand + ") " + price + " Baht";
     }
 
     @Override

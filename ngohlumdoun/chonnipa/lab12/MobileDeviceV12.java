@@ -37,6 +37,7 @@ public class MobileDeviceV12 extends MobileDeviceV11 {
         mdv12.setFrameFeatures();
         mdv12.addListeners();
         mdv12.setName();
+        mdv12.enableKeyboard();
     }
 
     @Override
