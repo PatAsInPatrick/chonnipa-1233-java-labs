@@ -121,6 +121,8 @@ public class MobileDeviceV15 extends MobileDeviceV14 {
 
     @Override
     protected void handleMenuOpen() {
+        deviceList.clear();
+
         // Open menu : displays a file chooser dialog -> open dialog
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showOpenDialog(this);
